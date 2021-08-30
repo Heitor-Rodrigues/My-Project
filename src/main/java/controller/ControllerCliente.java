@@ -17,13 +17,13 @@ public class ControllerCliente {
 
     @GetMapping
     public List<Cliente> listar() {
-       return clienteRepository.findAll();
+        return clienteRepository.findAll();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Cliente adicionar(@RequestBody Cliente cliente) {
-       return clienteRepository.save(cliente);
+        return clienteRepository.save(cliente);
     }
 
 }

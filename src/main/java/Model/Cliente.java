@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "cliente")
+@Table(name = "clientes")
 public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -20,13 +20,6 @@ public class Cliente implements Serializable {
 
     @Column(name = "telefone")
     private String telefone;
-
-    public Cliente(Long id, String nome, String email, String telefone) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.telefone = telefone;
-    }
 
     public Long getId() {
         return id;
@@ -73,5 +66,12 @@ public class Cliente implements Serializable {
     @Override
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "id=" + id +
+                '}';
     }
 }
